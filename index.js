@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json({limit:"50mb"}))
 app.use(cors({
   origin: [
-    "https://march-fe-fnzt.vercel.app/"
+    "https://march-fe-fnzt.vercel.app"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
