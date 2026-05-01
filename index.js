@@ -10,7 +10,15 @@ const mongoose = require("mongoose")
 const Path = require("path")
 app.use(express.urlencoded({extended:true}))
 app.use(express.json({limit:"50mb"}))
-app.use(cors())
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://your-vercel-app.vercel.app"
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}))
 
 app.set('view engine', 'ejs')
 console.log(process.env.DB_URI);
